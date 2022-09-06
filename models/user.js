@@ -20,7 +20,6 @@ module.exports = (sequelize, DataTypes) => {
     userRoleId: DataTypes.INTEGER,
     deletAt: DataTypes.DATE,  
     isActive: DataTypes.BOOLEAN,
-    userInfo: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'User',
