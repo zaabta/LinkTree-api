@@ -13,12 +13,13 @@ module.exports = {
       },
       order:{
         type: Sequelize.INTEGER,
+        defaultValue: 1
       },
       linkTypeId: {
         type: Sequelize.INTEGER,
         references:{
           model: {
-            tableName: "link_types"
+            tableName: "linkTypes"
           },
           key: "id"
         }
@@ -37,11 +38,13 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn("now")
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn("now")
       }
     });
   },

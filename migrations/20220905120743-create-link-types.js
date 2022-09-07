@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('link_types', {
+    await queryInterface.createTable('linkTypes', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -19,15 +19,17 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn("now")
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn("now")
       }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('link_types');
+    await queryInterface.dropTable('linkTypes');
   }
 };
